@@ -16,9 +16,11 @@ public class Transaction {
     // Double to keep track of total sales
     public static double totalSales = 0;
 
-    // Method to accept item and add it to the items ArrayList
-    // If the item exists already, increase the quantity using the quantity variable
-    // If the item does not exist, add it to the items ArrayList
+    /**
+     * Method to add an item to the items ArrayList
+     * @param item Item item
+     * @param quantity int quantity
+     */
     public static void addItem(Item item, int quantity) {
         // Check if the item exists already
         for (Item i : items) {
@@ -33,12 +35,18 @@ public class Transaction {
         items.add(item);
     }
 
-    // Getter for transaction list
+    /**
+     * Getter for transaction list
+     * @return ArrayList of items
+     */
     public static ArrayList<Item> getItems() {
         return items;
     }
 
-    // Get the transaction total sales by adding up the item prices * the item quantity
+    /**
+     * Get the transaction total sales by adding up the item prices * the item quantity
+     * @return Double totalSales
+     */
     public static Double getTransactionTotal() {
         Double total = 0.0;
         for (Item i : items) {
@@ -47,8 +55,10 @@ public class Transaction {
         return total;
     }
 
-    // Get the transaction total after sales tax is added.
-    // Sales tax is only added if the itemCode has "A" in it.
+    /**
+     * Get the transaction total after sales tax is added
+     * @return Double totalSales
+     */
     public static Double getTransactionTotalWithTax() {
         Double total = 0.0;
         Double unTaxTotal = 0.0;
@@ -63,7 +73,10 @@ public class Transaction {
         return ((total + (total * 0.06)) + unTaxTotal);
     }
 
-    // Remove item based on itemCode
+    /**
+     * Remove item based on itemCode
+     * @param itemCode String itemCode
+     */
     public static void removeItem(String itemCode) {
         for (Item i : HW2_Kruskie.items) {
             if (i.getItemCode().equals(itemCode.toUpperCase(Locale.ROOT))) {
@@ -73,7 +86,12 @@ public class Transaction {
         }
     }
 
-    // Modify item based on itemCode, name, and price
+    /**
+     * Modify item based on itemCode, name, and price
+     * @param itemCode String itemCode
+     * @param name String name
+     * @param price Double price
+     */
     public static void modifyItem(String itemCode, String name, double price) {
         for (Item i : HW2_Kruskie.items) {
             if (i.getItemCode().equals(itemCode.toUpperCase(Locale.ROOT))) {
@@ -84,7 +102,9 @@ public class Transaction {
         }
     }
 
-    // Empty the transaction list
+    /**
+     * Empty the transaction list
+     */
     public static void clearTransaction() {
         items.clear();
     }

@@ -19,13 +19,12 @@ Implement exception handling for
     File input: Y
     Checking wrong input data type: Y
     Checking invalid data value: Y
-    Tendered amount less than the total amount: N
-Use ArrayList for the items data: P
-Adding item data: N
+    Tendered amount less than the total amount: Y
+Use ArrayList for the items data: Y
+Adding item data: Y
 Deleting item data: Y
-Modifying item data: N
+Modifying item data: Y
 */
-
 
 public class HW2_Kruskie {
 
@@ -41,7 +40,7 @@ public class HW2_Kruskie {
 
     /**
      * Main method
-     * @param args
+     * @param args String[] args
      */
     public static void main(String[] args) {
 
@@ -128,7 +127,6 @@ public class HW2_Kruskie {
                     items.add(new Item(code.toUpperCase(), name, price));
                     System.out.println("Item added successfully!");
                     System.out.print("Do you want to update the items data? (A/D/M/Q): ");
-//                    update = scanner.next();
                     break;
                 case "d":
                     // Delete item
@@ -138,7 +136,6 @@ public class HW2_Kruskie {
                     Transaction.removeItem(code);
                     System.out.println("Item deleted successfully!");
                     System.out.print("Do you want to update the items data? (A/D/M/Q): ");
-//                    update = scanner.next();
                     break;
                 case "m":
                     // Modify item
@@ -152,7 +149,6 @@ public class HW2_Kruskie {
                     Transaction.modifyItem(code, name, price);
                     System.out.println("Item updated successfully!");
                     System.out.print("Do you want to update the items data? (A/D/M/Q): ");
-//                    update = scanner.next();
                     break;
                 case "q":
                     // Quit program
@@ -175,7 +171,6 @@ public class HW2_Kruskie {
 
     /**
      * Read the items from the csv file and store them in the items ArrayList
-     * @return void
      */
     public static void readItems() {
         try {
@@ -269,7 +264,6 @@ public class HW2_Kruskie {
 
     /**
      * Close the program
-     * @return void
      */
     private static void closeProgram() {
         System.out.println("Thanks for using POST System. Goodbye.");
@@ -277,7 +271,6 @@ public class HW2_Kruskie {
 
     /**
      * Print all item info
-     * @return void
      */
     private static void printAllItemInfo() {
         System.out.format("%-15s%-15s%-15s\n", "item code", "item name", "unit price");
@@ -288,7 +281,6 @@ public class HW2_Kruskie {
 
     /**
      * Print the end of the sale and print the transaction list
-     * @return void
      */
     private static void completeSale() {
         // Print ending message

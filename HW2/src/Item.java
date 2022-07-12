@@ -1,8 +1,5 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 
 // Homework 2: Sales Register Program
@@ -20,47 +17,87 @@ public class Item {
     private double itemPrice;
     private int itemQuantity;
 
-    // Create a constructor to accept the itemCode, itemName, and itemPrice
+    /**
+     * Constructor for the Item class
+     * @param itemCode String itemCode
+     * @param itemName String itemName
+     * @param itemPrice double itemPrice
+     */
     public Item(String itemCode, String itemName, double itemPrice) {
         this.itemCode = itemCode;
         this.itemName = itemName;
         this.itemPrice = itemPrice;
     }
 
-    // Generate getters and setters for the itemCode, itemName, itemPrice, and itemQuantity
+    /**
+     * Get for itemCode
+     * @return String itemCode
+     */
     public String getItemCode() {
         return itemCode;
     }
 
+    /**
+     * Set the itemCode
+     * @param itemCode String itemCode
+     */
     public void setItemCode(String itemCode) {
         this.itemCode = itemCode;
     }
 
+    /**
+     * Get the item name
+     * @return String itemName
+     */
     public String getItemName() {
         return itemName;
     }
 
+    /**
+     * Set the itemName to the given itemName
+     * @param itemName String itemName
+     */
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
+    /**
+     * Get the item price
+     * @return Double itemPrice
+     */
     public double getItemPrice() {
         return itemPrice;
     }
 
+    /**
+     * Set the itemPrice to the given price
+     * @param itemPrice double itemPrice
+     */
     public void setItemPrice(double itemPrice) {
         this.itemPrice = itemPrice;
     }
 
+    /**
+     * Get the item quantity
+     * @return int itemQuantity
+     */
     public int getItemQuantity() {
         return itemQuantity;
     }
 
+    /**
+     * Set the item quantity
+     * @param itemQuantity int itemQuantity
+     */
     public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
 
-    // Take a ArrayList of Items and a filename and save the items to the file as a CSV
+    /**
+     * Take a ArrayList of Items and a filename and save the items to the file as a CSV
+     * @param items ArrayList of Items
+     * @param filename String filename
+     */
     public static void saveItems(List<Item> items, String filename) {
         // Delete the file if it exists
         File file = new File(filename);
